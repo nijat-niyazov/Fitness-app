@@ -1,8 +1,8 @@
 .category-box {
   background-color: aliceblue;
   display: inline-block;
-  width: 20%;
-  padding: 20px;
+  width: 25%;
+  padding: 20px 5px;
   list-style: none;
   margin-top: 40px;
   position: absolute;
@@ -13,6 +13,7 @@
 
     a {
       color: black;
+      white-space: nowrap;
       display: flex;
       justify-content: space-between;
       &:hover {

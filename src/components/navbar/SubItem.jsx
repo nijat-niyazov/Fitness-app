@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import linkMaker from '../../utils/linkMaker';
+import linkMaker from '../../utils/functions/linkMaker';
 
 const SubItem = ({ cat, setBiy }) => {
   return (
@@ -10,7 +10,6 @@ const SubItem = ({ cat, setBiy }) => {
         onMouseOver={e => setBiy(e.target.innerHTML)}
       >
         {cat}
-        {/* <span>{menusWithSubs.includes(cat) ? '=>' : null}</span> */}
       </Link>
     </li>
   );

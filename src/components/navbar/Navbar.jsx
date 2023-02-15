@@ -6,6 +6,7 @@ import { BsPersonCircle, BsSearch } from 'react-icons/bs';
 import { MdAddShoppingCart } from 'react-icons/md';
 import ProgressBar from '../progressBar/ProgressBar';
 import NavWear from './NavWear';
+import SubMenus from './SubMenus';
 
 const icons = [
   { icon: <BsPersonCircle />, id: 1 },
@@ -44,16 +45,7 @@ const Navbar = () => {
         e.target.getBoundingClientRect().left) /
         2
     );
-    // console.log(e.target.getBoundingClientRect());
   };
-
-  // useEffect(() => {
-  //   console.log(alt);
-  //   console.log(cat);
-  //   console.log(ml);
-  // }, [alt, cat, ml]);
-
-  // const category = useMemo(() => setCat(alt), [alt]);
 
   return (
     <div
@@ -121,7 +113,8 @@ const Navbar = () => {
           ))}
         </ul>
       </nav>
-      <NavWear category={alt} ml={ml} />
+      {/* <NavWear category={alt} ml={ml} /> */}
+      <SubMenus />
     </div>
   );
 };

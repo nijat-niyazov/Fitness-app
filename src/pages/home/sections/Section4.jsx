@@ -3,9 +3,12 @@ import { Link } from 'react-router-dom';
 import section4 from '../../../data/sections/section4.json';
 import { fading } from '../../../utils/exporter';
 import { AiOutlineDoubleRight } from 'react-icons/ai';
+import { useEffect } from 'react';
 
 const Section4 = () => {
   fading();
+
+  useEffect(() => {}, []);
 
   return (
     <section
