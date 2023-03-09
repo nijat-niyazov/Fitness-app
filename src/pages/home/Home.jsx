@@ -1,5 +1,5 @@
 import React from 'react';
-import './home.scss';
+import '../../styles/pages/home.scss';
 import MY from '../../assets/images/project/welcome-img.png';
 
 const Home = () => {

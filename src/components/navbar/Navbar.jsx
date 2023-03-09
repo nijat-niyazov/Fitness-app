@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import navLogo from '../../assets/images/project/nav-logo.png';
-import './navbar.scss';
+import '../../styles/components/navbar.scss';
 import { BsPersonCircle, BsSearch } from 'react-icons/bs';
 import { MdAddShoppingCart } from 'react-icons/md';
 
@@ -15,7 +15,7 @@ const Navbar = () => {
   return (
     <nav>
       <div className="left-side">
-        <Link to="/" className='logo'>
+        <Link to="/" className="logo">
           <img src={navLogo} alt="navlogo" />
         </Link>
         <ul className="nav_section">
@@ -24,7 +24,9 @@ const Navbar = () => {
             <NavLink className="nav_element">BE GREEN WEAR</NavLink>
             <NavLink className="nav_element">SUPPLEMENT MARKET</NavLink>
             <NavLink className="nav_element">SPOR EKİPMANLARI</NavLink>
-            <NavLink className="nav_element">MUSTAFA YILDIZ KİMDİR ?</NavLink>
+            <NavLink className="nav_element" to="about">
+              MUSTAFA YILDIZ KİMDİR ?
+            </NavLink>
           </li>
         </ul>
       </div>

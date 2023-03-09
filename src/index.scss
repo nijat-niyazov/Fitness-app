@@ -1,4 +1,4 @@
-@use '/src/styles/variables' as vars;
+@use '/src/styles/vars/variables' as vars;
 
 * {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -13,22 +13,25 @@
 
 /* width */
 ::-webkit-scrollbar {
-  width: 8px;
-  border-radius: 10px;
-  padding: 0 10px;
+  width: 10px;
+  padding: 10px;
 }
 
-/* Track */
+/* Bar-background */
 ::-webkit-scrollbar-track {
   background: vars.$white;
+  padding: 10px;
 }
 
-/* Handle */
+/* Bar */
 ::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  padding: 10px;
   background: vars.$green-color;
 }
 
-/* Handle on hover */
+/* Bar on hover */
 ::-webkit-scrollbar-thumb:hover {
+  padding: 10px;
   background: #269d11;
 }
