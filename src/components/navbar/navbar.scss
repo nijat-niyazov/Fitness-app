@@ -1,0 +1,96 @@
+@use '../../styles/variables' as vars;
+
+nav {
+  margin: auto;
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  background: vars.$main-bg;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1;
+
+  ul {
+    list-style: none;
+  }
+
+  .left-side {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+    .logo {
+      height: 60px;
+    }
+
+    img {
+      width: 160px;
+      height: 100%;
+      background: white;
+      padding: 15px 20px;
+      padding-top: 20px;
+      border-radius: 0 10px 10px 0;
+      display: inline-block;
+    }
+
+    .nav_elements {
+      padding: 0 6px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+
+      .nav_element {
+        text-decoration: none;
+        display: inline-block;
+        padding: 0 10px;
+        font-size: 15px;
+        border-right: 1px dashed vars.$white;
+        color: vars.$white;
+        font-weight: 700;
+        letter-spacing: -0.6px;
+        &:hover {
+          color: vars.$green-color;
+        }
+        &:last-child {
+          font-weight: normal;
+          font-size: 13px;
+          border-right: 0;
+        }
+      }
+    }
+  }
+  .user-icons {
+    display: flex;
+    gap: 20px;
+    margin-right: 40px;
+    li {
+      cursor: pointer;
+      opacity: 0.5;
+      font-size: 30px;
+      color: white;
+      transition: opacity 0.3s;
+      &:hover {
+        opacity: 1;
+      }
+      &:first-child::after {
+        content: 'ÜYE OL';
+        font-size: 7px;
+        position: absolute;
+        top: 83%;
+        right: 11%;
+      }
+      &:last-child::after {
+        content: '0';
+        font-size: 8px;
+        padding: 3px;
+        background: red;
+        border-radius: 20%;
+        position: absolute;
+        top: 2%;
+        right: 2.3%;
+      }
+    }
+  }
+}
