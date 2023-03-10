@@ -1,12 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../../styles/pages/home.scss';
 import MY from '../../assets/images/project/welcome-img.png';
+import ScrollTop from '../../components/scroll-top/ScrollTop';
+import Section2 from './sections/Section2';
+import Section3 from './sections/Section3';
 
 const Home = () => {
+  useEffect(() => window.scrollTo({ top: 0 }), []);
+
   return (
-    <div style={{ color: 'white' }}>
+    <>
       <img src={MY} alt="Coach" />
-    </div>
+      <ScrollTop />
+      <Section2 />
+      <Section3 />
+    </>
   );
 };
 
