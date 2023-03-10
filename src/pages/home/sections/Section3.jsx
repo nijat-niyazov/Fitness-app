@@ -1,12 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import MY from '../../../assets/images/project/my.jpg';
 import GL from '../../../assets/images/project/gulsah.jpg';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
 
 const Section3 = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <section className="section-3">
-      <div className="box">
+      <div
+        className="box"
+        data-aos="fade-up"
+        data-aos-offset="1150"
+        data-aos-duration="60000"
+      >
         <article>
           <h2>
             VÜCUT <span> ŞEKLİNİ </span> <br />
@@ -26,7 +37,7 @@ const Section3 = () => {
         <LazyLoadImage alt={'mustafa'} src={MY} />
       </div>
 
-      <div className="box">
+      <div className="box" data-aos="fade-up" data-aos-offset="1350">
         <LazyLoadImage alt={'gulsah'} src={GL} />
         <article>
           <h2>

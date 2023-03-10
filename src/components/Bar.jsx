@@ -17,7 +17,7 @@ const Bar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  console.log(bar);
+  // console.log(bar);
 
   return (
     <div

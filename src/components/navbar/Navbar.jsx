@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import navLogo from '../../assets/images/project/nav-logo.png';
 import '../../styles/components/navbar.scss';
@@ -13,6 +13,26 @@ const icons = [
 ];
 
 const Navbar = () => {
+  const [bg, setBg] = useState('');
+  const [hover, setHover] = useState('');
+
+  const handleScroll = () => {
+    const scrollY = window.scrollY || window.pageYOffset;
+
+    if (scrollY > window.innerHeight) {
+      setBg('green');
+      setHover('red');
+    } else {
+      setHover('');
+      setBg('');
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <div
       style={{
@@ -22,13 +42,27 @@ const Navbar = () => {
         width: '100%',
       }}
     >
-      <nav>
+      <nav
+        style={{
+          backgroundColor: bg,
+          '&:hover': {
+            color: 'red',
+          },
+        }}
+      >
         <div className="left-side">
           <Link to="/" className="logo">
             <img src={navLogo} alt="navlogo" />
           </Link>
           <ul className="nav_section">
-            <li className="nav_elements">
+            <li
+              style={{
+                '&:hover': {
+                  color: 'red',
+                },
+              }}
+              className="nav_elements"
+            >
               <NavLink className="nav_element">
                 UZAKTAN EĞİTİM PAKETLERİ
               </NavLink>

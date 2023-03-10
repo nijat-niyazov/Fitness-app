@@ -1,11 +1,20 @@
 import React, { useEffect } from 'react';
 import services from '../../../../public/data/section2.json';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Section2 = () => {
-  console.log(services);
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   return (
-    <section className="second-view">
+    <section
+      className="section-2"
+      data-aos="fade-up"
+      data-aos-offset="1050"
+      data-aos-duration="60000"
+    >
       <article className="info">
         <h1>PROFESYONEL ÇALIŞMA PROGRAMI</h1>
         <ul className="bar-dot">

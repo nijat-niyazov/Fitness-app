@@ -1,10 +1,11 @@
 @use '../vars/variables' as vars;
+
 img {
   width: 100%;
   height: 100%;
 }
 
-.second-view {
+.section-2 {
   color: vars.$beyaz;
   width: 95%;
   margin: auto;
@@ -67,6 +68,8 @@ img {
   margin-top: 150px;
   padding: 0 40px;
   gap: 40px;
+  z-index: -1 !important;
+  position: relative;
 
   .box {
     display: flex;
@@ -119,5 +122,37 @@ img {
         }
       }
     }
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+
+  .card {
+    max-width: 400px;
+    min-width: 200px;
+    max-height: 200px;
+    min-height: 200px;
+    width: 100%;
+    height: 100%;
+    background: white;
+    margin: 20px;
+    border-radius: 30px;
+    opacity: 1;
+    transform: translateY(100px);
+  }
+
+  .target {
+    transform: translateY(100px);
+  }
+
+  .no {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.5s;
   }
 }
