@@ -2,6 +2,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { Link } from 'react-router-dom';
 import section4 from '../../../../public/data/section4.json';
 import { fading } from '../../../utils/exporter';
+import { AiOutlineDoubleRight } from 'react-icons/ai';
 
 const Section4 = () => {
   fading();
@@ -19,7 +20,9 @@ const Section4 = () => {
             <LazyLoadImage src={img} alt="first" />
             <div className="info">
               <h4>{paket}</h4>
-              <span to="/egitim paketleri">Incele -> </span>
+              <span to="/egitim paketleri">
+                Incele <AiOutlineDoubleRight style={{ marginLeft: '5px' }} />
+              </span>
             </div>
           </Link>
         );

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../../styles/components/scroll.scss';
-import { BsBoxArrowUp } from 'react-icons/bs';
+import { AiOutlineDoubleRight } from 'react-icons/ai';
 
 const ScrollTop = () => {
   const [topButton, setTopButton] = useState(false);
@@ -25,7 +25,7 @@ const ScrollTop = () => {
       {topButton ? (
         <button onClick={scrollToTop} className="scroll-div">
           <span>
-            <BsBoxArrowUp />
+            <AiOutlineDoubleRight />
           </span>
         </button>
       ) : null}
