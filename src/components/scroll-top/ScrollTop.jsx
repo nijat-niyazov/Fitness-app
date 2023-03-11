@@ -1,18 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import './scroll.scss';
+import '../../styles/components/scroll.scss';
 import { BsBoxArrowUp } from 'react-icons/bs';
 
 const ScrollTop = () => {
-  const [bar, setBar] = useState(false);
+  const [topButton, setTopButton] = useState(false);
 
   const handleScroll = () => {
-    const scrollY = window.scrollY || window.pageYOffset;
-
-    if (scrollY > window.innerHeight / 2) {
-      setBar(true);
-    } else {
-      setBar(false);
-    }
+    window.scrollY > window.innerHeight / 2
+      ? setTopButton(true)
+      : setTopButton(false);
   };
 
   const scrollToTop = () => {
@@ -26,12 +22,8 @@ const ScrollTop = () => {
 
   return (
     <>
-      {bar ? (
-        <button
-          onClick={scrollToTop}
-          className="scroll-div"
-          style={{ top: '10%' }}
-        >
+      {topButton ? (
+        <button onClick={scrollToTop} className="scroll-div">
           <span>
             <BsBoxArrowUp />
           </span>

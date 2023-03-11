@@ -4,7 +4,8 @@ import navLogo from '../../assets/images/project/nav-logo.png';
 import '../../styles/components/navbar.scss';
 import { BsPersonCircle, BsSearch } from 'react-icons/bs';
 import { MdAddShoppingCart } from 'react-icons/md';
-import Bar from '../Bar';
+import Bar from '../progressBar/ProgressBar';
+import ProgressBar from '../progressBar/ProgressBar';
 
 const icons = [
   { icon: <BsPersonCircle />, id: 1 },
@@ -81,7 +82,6 @@ const Navbar = () => {
           ))}
         </ul>
       </nav>
-      <Bar />
     </div>
   );
 };

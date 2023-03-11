@@ -1,61 +1,38 @@
-import React, { useEffect } from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import MY from '../../../assets/images/project/my.jpg';
-import GL from '../../../assets/images/project/gulsah.jpg';
-import AOS from 'aos';
-import 'aos/dist/aos.css'; // You can also use <link> for styles
+import section3 from '../../../../public/data/section3.json';
+import { fading } from '../../../utils/exporter';
 
 const Section3 = () => {
-  useEffect(() => {
-    AOS.init();
-  }, []);
+  fading();
 
   return (
     <section className="section-3">
-      <div
-        className="box"
-        data-aos="fade-up"
-        data-aos-offset="1150"
-        data-aos-duration="60000"
-      >
-        <article>
-          <h2>
-            VÜCUT <span> ŞEKLİNİ </span> <br />
-            DEĞİŞTİR
-          </h2>
+      {section3.map(({ img, slogan, description, button }, i) => {
+        const secIndex = slogan.indexOf(' ', slogan.indexOf(' ') + 1);
+        const span = slogan.slice(0, secIndex);
+        const text = slogan.slice(secIndex + 1);
+        return (
+          <div
+            key={i}
+            className="box"
+            data-aos="fade-up"
+            data-aos-offset={i === 0 ? '1150' : '1350'}
+            data-aos-duration="60000"
+          >
+            <article>
+              <h2>
+                <span> {span} </span> <br /> {text}
+              </h2>
 
-          <h6>
-            SAĞLIKLI VE FİT BİR VÜCUDA SAHİP OL // Azalan yağ kütlesini, artan
-            kas gücü ve dayanıklılık Yüksek enerji ve güçlü bağışıklık sistemi
-            // Anksiyete, stres, gerginlik ve depresyondan uzak bir yaşam tarzı
-            ile tanış
-          </h6>
-          <button>
-            <span>Simdi Uye Ol</span>
-          </button>
-        </article>
-        <LazyLoadImage alt={'mustafa'} src={MY} />
-      </div>
-
-      <div className="box" data-aos="fade-up" data-aos-offset="1350">
-        <LazyLoadImage alt={'gulsah'} src={GL} />
-        <article>
-          <h2>
-            <span> BEGREEN APP </span>
-            İLE <br /> TAM PERFORMANS
-          </h2>
-          <h6>
-            Tüm Süreçlerinizde ihtiyacınız olan her şey her an yanınızda.
-            Gelişmiş özelliklere sahip BE GREEN APP üzerinden planlarınızı takip
-            edebilir. Profesyonel koçunuzdan tam destek alabilirsiniz. BE GREEN
-            APP ile ilerlemeniz her gün kontrol altında.
-          </h6>
-
-          <button>
-            <span>UCretsiz indirin</span>
-          </button>
-        </article>
-      </div>
+              <h6>{description}</h6>
+              <button>
+                <span>{button}</span>
+              </button>
+            </article>
+            <LazyLoadImage src={img} alt="traniner" />
+          </div>
+        );
+      })}
     </section>
   );
 };

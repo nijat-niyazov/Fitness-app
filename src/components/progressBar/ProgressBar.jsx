@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-const Bar = () => {
+const ProgressBar = () => {
   const [bar, setBar] = useState(0);
 
   const handleScroll = () => {
@@ -46,4 +46,4 @@ const Bar = () => {
   );
 };
 
-export default Bar;
+export default ProgressBar;

@@ -1,12 +1,8 @@
-import React, { useEffect } from 'react';
 import services from '../../../../public/data/section2.json';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import { fading } from '../../../utils/exporter';
 
 const Section2 = () => {
-  useEffect(() => {
-    AOS.init();
-  }, []);
+  fading();
 
   return (
     <section

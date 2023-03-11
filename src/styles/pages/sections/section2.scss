@@ -1,0 +1,58 @@
+.section-2 {
+  color: $beyaz;
+  width: 95%;
+  margin: auto;
+  position: relative;
+  z-index: -1;
+
+  .info {
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 60px;
+
+    h1 {
+      font-size: 50px;
+      line-height: 140px;
+      font-family: 'Anton';
+      letter-spacing: 2px;
+    }
+    ul {
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+
+      li {
+        padding-bottom: 40px;
+        position: relative;
+        border-bottom: 1px solid $gray;
+        margin-right: 2px;
+        width: 100%;
+        color: rgba(238, 238, 238, 1);
+        font-size: 18px;
+        &::after {
+          content: '';
+          width: 15px;
+          height: 15px;
+          border-radius: 50%;
+          background-color: $beyaz;
+          position: absolute;
+          top: 90%;
+          right: 50%;
+        }
+      }
+    }
+  }
+
+  .services {
+    list-style: circle;
+    width: 95%;
+    margin: auto;
+    margin-left: 40px;
+    font-weight: 600;
+    li {
+      margin: 10px 0;
+      font-size: 20px;
+      color: $gray;
+    }
+  }
+}
