@@ -1,5 +1,6 @@
+import { useEffect } from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import section3 from '../../../../public/data/section3.json';
+import section3 from '../../../data/sections/section3.json';
 import { fading } from '../../../utils/exporter';
 
 const Section3 = () => {
@@ -9,8 +10,7 @@ const Section3 = () => {
     <section className="section-3">
       {section3.map(({ img, slogan, description, button }, i) => {
         const secIndex = slogan.indexOf(' ', slogan.indexOf(' ') + 1);
-        const span = slogan.slice(0, secIndex);
-        const text = slogan.slice(secIndex + 1);
+
         return (
           <div
             key={i}
@@ -21,7 +21,10 @@ const Section3 = () => {
           >
             <article>
               <h2>
-                <span> {span} </span> <br /> {text}
+                <span>
+                  {slogan.slice(0, secIndex)} <br />
+                </span>
+                {slogan.slice(secIndex + 1)}
               </h2>
 
               <h6>{description}</h6>

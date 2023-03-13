@@ -1,0 +1,34 @@
+{
+  "be_green_wear": [
+    {
+      "BE GREEN KOLYE": []
+    },
+    {
+      "BE GREEN ÖĞÜN ÇANTALARI": []
+    }
+  ],
+  "supplement_market": [
+    "AVANTAJLI SUPPLEMENT PAKETLERİ",
+    "AMİNO ASİTLER",
+    "AROMALAR",
+    "DETOKS ÜRÜNLERİ",
+    "GÜÇ VE PERFORMANS",
+    "KİLO ALMA–KARBONHİDRATLAR",
+    "KOLAJEN",
+    "PROTEİN TOZLARI",
+    "VİTAMİN-MİNERALLER",
+    "YAĞ YAKICILAR VE KİLO VERME",
+    "ZMA",
+    "E-BOOK",
+    "DAHA FİT OL"
+  ],
+  "spor_ekipmanlari": [
+    "AĞIRLIK SETLERİ",
+    "FİTNESS AKSESUARLARI",
+    "KARDİYO EKİPMANLARI"
+  ],
+  "altCats": {
+    "AMİNO ASİTLER": ["BCAA", "ARGININE", "GLUTAMINE"],
+    "YAĞ YAKICILAR VE KİLO VERME": []
+  }
+}

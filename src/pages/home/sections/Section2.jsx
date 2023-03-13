@@ -1,4 +1,4 @@
-import services from '../../../../public/data/section2.json';
+import services from '../../../data/sections/section2.json';
 import { fading } from '../../../utils/exporter';
 
 const Section2 = () => {

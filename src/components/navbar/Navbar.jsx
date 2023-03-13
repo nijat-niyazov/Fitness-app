@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import navLogo from '../../assets/images/project/nav-logo.png';
 import '../../styles/components/navbar.scss';
 import { BsPersonCircle, BsSearch } from 'react-icons/bs';
 import { MdAddShoppingCart } from 'react-icons/md';
-import Bar from '../progressBar/ProgressBar';
 import ProgressBar from '../progressBar/ProgressBar';
+import NavWear from './NavWear';
 
 const icons = [
   { icon: <BsPersonCircle />, id: 1 },
@@ -16,6 +16,9 @@ const icons = [
 const Navbar = () => {
   const [bg, setBg] = useState('');
   const [hover, setHover] = useState('');
+  const [alt, setAlt] = useState(null);
+  const [cat, setCat] = useState(null);
+  const [ml, setMl] = useState(null);
 
   const handleScroll = () => {
     const scrollY = window.scrollY || window.pageYOffset;
@@ -33,6 +36,24 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const setter = e => {
+    setAlt(e.target.innerHTML.toLowerCase().replaceAll(' ', '_'));
+    setMl(
+      (e.target.getBoundingClientRect().right +
+        e.target.getBoundingClientRect().left) /
+        2
+    );
+    // console.log(e.target.getBoundingClientRect());
+  };
+
+  // useEffect(() => {
+  //   console.log(alt);
+  //   console.log(cat);
+  //   console.log(ml);
+  // }, [alt, cat, ml]);
+
+  // const category = useMemo(() => setCat(alt), [alt]);
 
   return (
     <div
@@ -67,9 +88,27 @@ const Navbar = () => {
               <NavLink className="nav_element">
                 UZAKTAN EĞİTİM PAKETLERİ
               </NavLink>
-              <NavLink className="nav_element">BE GREEN WEAR</NavLink>
-              <NavLink className="nav_element">SUPPLEMENT MARKET</NavLink>
-              <NavLink className="nav_element">SPOR EKİPMANLARI</NavLink>
+              <NavLink
+                // onMouseLeave={() => setAlt(null)}
+                onMouseOver={setter}
+                className="nav_element"
+              >
+                BE GREEN WEAR
+              </NavLink>
+              <NavLink
+                onMouseOver={setter}
+                // onMouseLeave={() => setAlt(null)}
+                className="nav_element"
+              >
+                SUPPLEMENT MARKET
+              </NavLink>
+              <NavLink
+                onMouseOver={setter}
+                // onMouseLeave={() => setAlt(null)}
+                className="nav_element"
+              >
+                SPOR EKİPMANLARi
+              </NavLink>
               <NavLink className="nav_element" to="about">
                 MUSTAFA YILDIZ KİMDİR ?
               </NavLink>
@@ -82,6 +121,7 @@ const Navbar = () => {
           ))}
         </ul>
       </nav>
+      <NavWear category={alt} ml={ml} />
     </div>
   );
 };
