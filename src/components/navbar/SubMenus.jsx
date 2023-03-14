@@ -17,7 +17,7 @@ const SubMenus = () => {
     {
       main: 'YAĞ YAKICILAR – KİLO VERME',
 
-      submenus: ['d', 'e', 'f'],
+      submenus: ['d', 'e', 'f', 'g'],
     },
   ];
 
