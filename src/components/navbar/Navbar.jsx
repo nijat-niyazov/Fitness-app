@@ -5,8 +5,8 @@ import '../../styles/components/navbar.scss';
 import { BsPersonCircle, BsSearch } from 'react-icons/bs';
 import { MdAddShoppingCart } from 'react-icons/md';
 import ProgressBar from '../progressBar/ProgressBar';
-import NavWear from './NavWear';
 import SubMenus from './SubMenus';
+import navInfo from '../../data/nav/nav.json';
 
 const icons = [
   { icon: <BsPersonCircle />, id: 1 },
@@ -17,8 +17,8 @@ const icons = [
 const Navbar = () => {
   const [bg, setBg] = useState('');
   const [hover, setHover] = useState('');
-  const [alt, setAlt] = useState(null);
-  const [cat, setCat] = useState(null);
+
+  const [menus, setMenus] = useState(null);
   const [ml, setMl] = useState(null);
 
   const handleScroll = () => {
@@ -39,7 +39,7 @@ const Navbar = () => {
   }, []);
 
   const setter = e => {
-    setAlt(e.target.innerHTML.toLowerCase().replaceAll(' ', '_'));
+    setMenus(e.target.innerHTML.toLowerCase().replaceAll(' ', '_'));
     setMl(
       (e.target.getBoundingClientRect().right +
         e.target.getBoundingClientRect().left) /
@@ -80,30 +80,19 @@ const Navbar = () => {
               <NavLink className="nav_element">
                 UZAKTAN EĞİTİM PAKETLERİ
               </NavLink>
-              <NavLink
-                // onMouseLeave={() => setAlt(null)}
-                onMouseOver={setter}
-                className="nav_element"
-              >
-                BE GREEN WEAR
-              </NavLink>
-              <NavLink
-                onMouseOver={setter}
-                // onMouseLeave={() => setAlt(null)}
-                className="nav_element"
-              >
-                SUPPLEMENT MARKET
-              </NavLink>
-              <NavLink
-                onMouseOver={setter}
-                // onMouseLeave={() => setAlt(null)}
-                className="nav_element"
-              >
-                SPOR EKİPMANLARi
-              </NavLink>
-              <NavLink className="nav_element" to="about">
-                MUSTAFA YILDIZ KİMDİR ?
-              </NavLink>
+
+              {Object.keys(navInfo).map((menu, i) => {
+                return (
+                  <NavLink
+                    key={i}
+                    onMouseEnter={setter}
+                    onClick={() => setMenus(null)}
+                    className="nav_element"
+                  >
+                    {menu.toUpperCase().split('_').join(' ')}
+                  </NavLink>
+                );
+              })}
             </li>
           </ul>
         </div>
@@ -113,8 +102,7 @@ const Navbar = () => {
           ))}
         </ul>
       </nav>
-      {/* <NavWear category={alt} ml={ml} /> */}
-      <SubMenus />
+      <SubMenus ml={ml} menus={navInfo[menus]} />
     </div>
   );
 };

@@ -2,16 +2,18 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import linkMaker from '../../utils/functions/linkMaker';
 
-const SubItem = ({ cat, setBiy }) => {
+const SubItem = ({ subMenu }) => {
   return (
-    <li className="cat">
-      <Link
-        to={'be-green-wear/' + linkMaker(cat)}
-        onMouseOver={e => setBiy(e.target.innerHTML)}
-      >
-        {cat}
-      </Link>
-    </li>
+    <ul className="submenu-box">
+      {subMenu?.map((childMenu, i) => {
+        console.log(childMenu);
+        return (
+          <li className="koti" key={i}>
+            {childMenu}
+          </li>
+        );
+      })}
+    </ul>
   );
 };
 

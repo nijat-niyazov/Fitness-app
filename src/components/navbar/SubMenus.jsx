@@ -1,70 +1,56 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { linkMaker } from '../../utils/exporter';
+import SubItem from './SubItem';
 
-const SubMenus = () => {
+const SubMenus = ({ ml, menus }) => {
   const [finder, setfinder] = useState(null);
+  const [subMenu, setsubMenu] = useState(undefined);
 
-  const beGreenWear = [
-    {
-      main: 'AMİNO ASİTLER',
-
-      submenus: ['a', 'b', 'c'],
-    },
-    {
-      main: 'AVANTAJLI SUPPLEMENT PAKETLERİ',
-    },
-    {
-      main: 'YAĞ YAKICILAR – KİLO VERME',
-
-      submenus: ['d', 'e', 'f', 'g'],
-    },
-  ];
+  console.log(menus);
 
   useEffect(() => {
-    console.log(finder);
-    const subs = beGreenWear.find(obj => {
-      return obj.main === finder;
-    })?.submenus;
-
-    console.log(subs);
+    setsubMenu(menus?.find(obj => obj.main === finder)?.submenus);
   }, [finder]);
 
+  useEffect(() => {
+    if (subMenu !== undefined) {
+    }
+  }, [subMenu]);
+
   return (
-    <div>
-      <ul
-        className="category-box"
-        style={{
-          left: 500 + 'px',
-          transform: 'translateX(-50%)',
-          transition: 'all 0.3s',
-        }}
-      >
-        {beGreenWear.map((menu, i) => {
-          if (menu.submenus === undefined) {
+    menus && (
+      <div className="okay" style={{ position: 'relative' }}>
+        <ul
+          className="category-box"
+          style={{
+            left: ml + 'px',
+            transform: 'translateX(-50%)',
+            transition: 'all 0.3s',
+          }}
+        >
+          {menus?.map((menu, i) => {
             return (
-              <li className="cat without-subs" key={i}>
+              <li
+                className={menu.submenus ? 'cat with' : 'cat without'}
+                key={i}
+              >
                 <Link to={'be-green-wear/' + linkMaker(menu.main)}>
-                  <span onMouseEnter={e => setfinder(e.target.innerHTML)}>
+                  <span
+                    className={menu.submenus ? 'spanwith' : 'spanwithout'}
+                    onMouseEnter={e => setfinder(e.target.innerHTML)}
+                    onMouseLeave={() => setfinder(null)}
+                  >
                     {menu.main}
                   </span>
                 </Link>
               </li>
             );
-          }
-          return (
-            <li className="cat with-subs" key={i}>
-              <Link to={'be-green-wear/' + linkMaker(menu.main)}>
-                <span onMouseEnter={e => setfinder(e.target.innerHTML)}>
-                  {menu.main} {'-->'}
-                </span>
-                <span>{'-->'}</span>
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
-    </div>
+          })}
+        </ul>
+        {(subMenu !== null || undefined) && <SubItem subMenu={subMenu} />}
+      </div>
+    )
   );
 };
 

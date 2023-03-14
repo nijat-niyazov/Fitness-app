@@ -1,34 +1,46 @@
 {
   "be_green_wear": [
-    {
-      "BE GREEN KOLYE": []
-    },
-    {
-      "BE GREEN ÖĞÜN ÇANTALARI": []
-    }
+    { "main": "BE GREEN KOLYE" },
+    { "main": "BE GREEN ÖĞÜN ÇANTALARI" },
+    { "main": "GYM PLAID / GÖMLEK SERİSİ" },
+    { "main": "SPOR KORSE" },
+    { "main": "OVERSİZE T-SHİRT" },
+    { "main": "KAMUFLAJ FİLE T-SHİRT" },
+    { "main": "KAPÜŞONLU HOODİE" },
+    { "main": "KISA ŞORT" },
+    { "main": "EŞOFMAN ALTI" },
+    { "main": "ANTRENMAN ATLETİ" },
+    { "main": "WOMEN TANK TOP" },
+    { "main": "WASHED T-SHIRT" },
+    { "main": "WASHED ŞORT" },
+    { "main": "WASHED GYM TANK TOP" },
+    { "main": "KADIN TAYT - BRA" }
   ],
   "supplement_market": [
-    "AVANTAJLI SUPPLEMENT PAKETLERİ",
-    "AMİNO ASİTLER",
-    "AROMALAR",
-    "DETOKS ÜRÜNLERİ",
-    "GÜÇ VE PERFORMANS",
-    "KİLO ALMA–KARBONHİDRATLAR",
-    "KOLAJEN",
-    "PROTEİN TOZLARI",
-    "VİTAMİN-MİNERALLER",
-    "YAĞ YAKICILAR VE KİLO VERME",
-    "ZMA",
-    "E-BOOK",
-    "DAHA FİT OL"
+    { "main": "AVANTAJLI SUPPLEMENT PAKETLERİ" },
+    { "main": "AMİNO ASİTLER", "submenus": ["ARGININE", "BCAA", "GLUTAMİNE"] },
+    { "main": "AROMALAR" },
+    { "main": "DETOKS ÜRÜNLERİ" },
+    { "main": "GÜÇ VE PERFORMANS" },
+    { "main": "KİLO ALMA–KARBONHİDRATLAR" },
+    { "main": "KOLAJEN" },
+    { "main": "PROTEİN TOZLARI" },
+    { "main": "VİTAMİN-MİNERALLER" },
+    {
+      "main": "YAĞ YAKICILAR–KİLO VERME",
+      "submenus": ["CLA", "L-CARNİTİNE", "THERMO"]
+    },
+    { "main": "CLA" },
+    { "main": "L-CARNİTİNE" },
+    { "main": "THERMO" },
+    { "main": "ZMA" },
+    { "main": "E-BOOK" },
+    { "main": "DAHA FİT OL" }
   ],
   "spor_ekipmanlari": [
-    "AĞIRLIK SETLERİ",
-    "FİTNESS AKSESUARLARI",
-    "KARDİYO EKİPMANLARI"
+    { "main": "AĞIRLIK SETLERİ" },
+    { "main": "FITNESS AKSESUARLARI" },
+    { "main": "KARDİYO EKİPMANLARI" }
   ],
-  "altCats": {
-    "AMİNO ASİTLER": ["BCAA", "ARGININE", "GLUTAMINE"],
-    "YAĞ YAKICILAR VE KİLO VERME": []
-  }
+  "mustafa_yildiz_kimdir_?": []
 }
