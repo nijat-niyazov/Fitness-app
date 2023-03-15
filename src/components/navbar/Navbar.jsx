@@ -1,18 +1,20 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import navLogo from '../../assets/images/project/nav-logo.png';
 import '../../styles/components/navbar.scss';
-import { BsPersonCircle, BsSearch } from 'react-icons/bs';
-import { MdAddShoppingCart } from 'react-icons/md';
 import ProgressBar from '../progressBar/ProgressBar';
 import SubMenus from './SubMenus';
 import navInfo from '../../data/nav/nav.json';
+// import IconUs from '../../data/nav/icons';
+// import icons from '../../data/nav/icons';
 
-const icons = [
-  { icon: <BsPersonCircle />, id: 1 },
-  { icon: <BsSearch />, id: 3 },
-  { icon: <MdAddShoppingCart />, id: 2 },
-];
+// console.log(icons);
+
+// const icons = [
+//   { icon: <BsPersonCircle />, id: 1 },
+//   { icon: <BsSearch />, id: 3 },
+//   { icon: <MdAddShoppingCart />, id: 2 },
+// ];
 
 const Navbar = () => {
   const [bg, setBg] = useState('');
@@ -86,11 +88,12 @@ const Navbar = () => {
           </ul>
           <SubMenus ml={ml} menus={navInfo[menus]} />
         </div>
-        <ul className="user-icons">
+        {/* <ul className="user-icons">
           {icons.map(({ icon, id }) => (
             <li key={id}>{icon}</li>
           ))}
-        </ul>
+        </ul> */}
+        {/* <IconUs /> */}
       </nav>
     </div>
   );
