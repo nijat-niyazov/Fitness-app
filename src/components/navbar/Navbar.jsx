@@ -18,20 +18,20 @@ const Navbar = () => {
   const [bg, setBg] = useState('');
   const [hover, setHover] = useState('');
 
-  const [menus, setMenus] = useState(null);
-  const [ml, setMl] = useState(null);
-
   const handleScroll = () => {
     const scrollY = window.scrollY || window.pageYOffset;
 
     if (scrollY > window.innerHeight) {
       setBg('green');
-      setHover('red');
+      setHover('blue');
     } else {
       setHover('');
       setBg('');
     }
   };
+
+  const [menus, setMenus] = useState(null);
+  const [ml, setMl] = useState(null);
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
@@ -48,35 +48,22 @@ const Navbar = () => {
   };
 
   return (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        position: 'fixed',
-        width: '100%',
-      }}
-    >
+    <div className="nav">
       <nav
         style={{
           backgroundColor: bg,
           '&:hover': {
-            color: 'red',
+            color: hover,
           },
         }}
       >
-        <div className="left-side">
+        <div className="navbar">
           <Link to="/" className="logo">
             <img src={navLogo} alt="navlogo" />
           </Link>
+
           <ul className="nav_section">
-            <li
-              style={{
-                '&:hover': {
-                  color: 'red',
-                },
-              }}
-              className="nav_elements"
-            >
+            <li className="nav_elements">
               <NavLink className="nav_element">
                 UZAKTAN EĞİTİM PAKETLERİ
               </NavLink>
@@ -89,12 +76,15 @@ const Navbar = () => {
                     onClick={() => setMenus(null)}
                     className="nav_element"
                   >
+                    {/* <span> */}
                     {menu.toUpperCase().split('_').join(' ')}
+                    {/* </span> */}
                   </NavLink>
                 );
               })}
             </li>
           </ul>
+          <SubMenus ml={ml} menus={navInfo[menus]} />
         </div>
         <ul className="user-icons">
           {icons.map(({ icon, id }) => (
@@ -102,7 +92,6 @@ const Navbar = () => {
           ))}
         </ul>
       </nav>
-      <SubMenus ml={ml} menus={navInfo[menus]} />
     </div>
   );
 };

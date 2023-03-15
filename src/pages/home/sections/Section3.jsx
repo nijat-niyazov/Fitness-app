@@ -1,10 +1,14 @@
-import { useEffect } from 'react';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 import section3 from '../../../data/sections/section3.json';
-import { fading } from '../../../utils/exporter';
+import { fading, lazyLoadImages } from '../../../utils/exporter';
+
+// import lazyLoader from '../../../utils/functions/lazyLoadImg';
 
 const Section3 = () => {
+  // ============ Fading Up ===========
   fading();
+
+  // ============ LazyLoader ===========
+  lazyLoadImages();
 
   return (
     <section className="section-3">
@@ -32,7 +36,14 @@ const Section3 = () => {
                 <span>{button}</span>
               </button>
             </article>
-            <LazyLoadImage src={img} alt="traniner" />
+            {/* <LazyLoadImage src={img} alt="traniner" /> */}
+            <img
+              src={''}
+              data-src={img}
+              alt="traniner"
+              width={500}
+              height={250}
+            />
           </div>
         );
       })}

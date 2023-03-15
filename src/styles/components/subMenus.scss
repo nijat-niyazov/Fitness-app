@@ -1,0 +1,57 @@
+@use '../vars/variables' as *;
+
+.category-box {
+  top: 100%;
+  position: absolute;
+  background-color: $beyaz;
+  list-style: none;
+  white-space: nowrap;
+  border-radius: 0 0 10px 10px;
+
+  .category {
+    padding: 10px;
+
+    a {
+      color: black;
+      white-space: nowrap;
+      .span {
+        font-weight: 700;
+        display: block;
+        font-family: $barlow;
+      }
+      &:hover {
+        color: green;
+      }
+    }
+  }
+
+  .withS {
+    position: relative;
+
+    .withChild {
+      color: red;
+      &::after {
+        content: '->';
+        width: 100%;
+        text-align: end;
+      }
+    }
+
+    .submenu-box {
+      position: absolute;
+      background-color: aliceblue;
+      left: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 10px;
+
+      .koti {
+        color: black;
+        margin-bottom: 2;
+        &:hover {
+          color: green;
+        }
+      }
+    }
+  }
+}

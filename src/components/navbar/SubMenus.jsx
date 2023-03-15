@@ -7,20 +7,17 @@ const SubMenus = ({ ml, menus }) => {
   const [finder, setfinder] = useState(null);
   const [subMenu, setsubMenu] = useState(undefined);
 
-  console.log(menus);
-
   useEffect(() => {
     setsubMenu(menus?.find(obj => obj.main === finder)?.submenus);
   }, [finder]);
 
   useEffect(() => {
-    if (subMenu !== undefined) {
-    }
-  }, [subMenu]);
+    console.log(finder, subMenu);
+  }, [finder, subMenu]);
 
   return (
-    menus && (
-      <div className="okay" style={{ position: 'relative' }}>
+    menus?.length !== 0 && (
+      <>
         <ul
           className="category-box"
           style={{
@@ -32,24 +29,31 @@ const SubMenus = ({ ml, menus }) => {
           {menus?.map((menu, i) => {
             return (
               <li
-                className={menu.submenus ? 'cat with' : 'cat without'}
+                className={
+                  menu.submenus ? 'category withS' : 'category withoutS'
+                }
                 key={i}
               >
                 <Link to={'be-green-wear/' + linkMaker(menu.main)}>
                   <span
-                    className={menu.submenus ? 'spanwith' : 'spanwithout'}
+                    className={
+                      menu.submenus ? 'span withChild' : 'span withoutChild'
+                    }
                     onMouseEnter={e => setfinder(e.target.innerHTML)}
-                    onMouseLeave={() => setfinder(null)}
+                    onClick={() => setfinder(null)}
                   >
                     {menu.main}
                   </span>
+                  {menu.submenus && subMenu !== undefined && (
+                    <SubItem subMenu={subMenu} />
+                  )}
                 </Link>
               </li>
             );
           })}
         </ul>
-        {(subMenu !== null || undefined) && <SubItem subMenu={subMenu} />}
-      </div>
+        {/* {(subMenu !== null || undefined) && <SubItem subMenu={subMenu} />} */}
+      </>
     )
   );
 };

@@ -6,7 +6,7 @@ const SubItem = ({ subMenu }) => {
   return (
     <ul className="submenu-box">
       {subMenu?.map((childMenu, i) => {
-        console.log(childMenu);
+        // console.log(childMenu);
         return (
           <li className="koti" key={i}>
             {childMenu}
