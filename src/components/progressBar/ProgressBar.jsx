@@ -23,9 +23,7 @@ const ProgressBar = () => {
     <div
       style={{
         backgroundColor: 'white',
-        display: 'block',
         width: '100%',
-        textAlign: 'center',
         height: '15px',
         display: 'flex',
         alignItems: 'center',
