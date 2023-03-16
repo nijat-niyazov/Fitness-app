@@ -14,27 +14,26 @@ const srcChanger = target => {
   }
 };
 
-const lazyLoader = allImgElements => {
-  const intersector = new IntersectionObserver((elements, self) => {
-    elements?.forEach(element => {
-      if (!element.isIntersecting) {
-        return;
-      }
+const intersector = new IntersectionObserver((elements, self) => {
+  elements?.forEach(element => {
+    if (!element.isIntersecting) {
+      return;
+    }
 
-      srcChanger(element.target);
-      self.unobserve(element.target);
-    });
-  }, options);
-
-  allImgElements?.forEach(imgEl => intersector.observe(imgEl));
-};
+    srcChanger(element.target);
+    self.unobserve(element.target);
+  });
+}, options);
 
 const lazyLoadImages = () => {
   useEffect(() => {
     const elements = document.querySelectorAll('[data-src]');
-    if (elements.length !== 0) {
-      lazyLoader(elements);
-    }
+
+    elements?.forEach(imgEl => intersector.observe(imgEl));
+
+    return () => {
+      elements?.forEach(imgEl => intersector.unobserve(imgEl));
+    };
   }, []);
 };
 
