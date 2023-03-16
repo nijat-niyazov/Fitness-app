@@ -1,4 +1,3 @@
-import React from 'react';
 import { AiOutlineCamera } from 'react-icons/ai';
 import { BreadCrumbs } from '../../components/exporter';
 import data from '../../data/about/about.json';
