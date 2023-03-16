@@ -5,6 +5,11 @@
   width: 98%;
   margin: auto;
 
+  h2 {
+    font-family: $anton;
+    font-size: 30px;
+  }
+
   header {
     width: 30%;
     margin: 30px auto;
@@ -56,9 +61,40 @@
   }
 
   .gallery {
-    display: flex;
-    img {
-      width: 40px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+
+    .card {
+      position: relative;
+
+      .camera {
+        position: absolute;
+        font-size: 00px;
+        color: $green-color;
+        opacity: 0;
+        top: 50%;
+        right: 50%;
+        transform: translate(50%, -50%);
+      }
+
+      .gallery_photo {
+        width: 222px;
+        object-fit: cover;
+        height: 222px;
+        cursor: pointer;
+        &:hover {
+          opacity: 0.7;
+          transition: opacity 0.5s;
+
+          ~ .camera {
+            opacity: 1;
+            font-size: 40px;
+            transition: all 0.3s;
+          }
+        }
+      }
     }
   }
 }

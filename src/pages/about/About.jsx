@@ -1,4 +1,5 @@
 import React from 'react';
+import { AiOutlineCamera } from 'react-icons/ai';
 import { BreadCrumbs } from '../../components/exporter';
 import data from '../../data/about/about.json';
 import '../../styles/pages/about.scss';
@@ -10,7 +11,7 @@ const About = () => {
   return (
     <section className="about">
       <header>
-        <h2>{'Hakkimda'}</h2>
+        <h2>HAKKIMDA</h2>
         <BreadCrumbs />
       </header>
       <div className="flex">
@@ -18,7 +19,6 @@ const About = () => {
         <div className="info-section">
           <article>
             {data.about.split('.').map((sentence, dot) => {
-              console.log(sentence);
               return (
                 <p key={dot}>
                   - {sentence}. <br /> <br />
@@ -29,7 +29,7 @@ const About = () => {
           <div>
             <h4> IFBB PRO MUSTAFA YILDIZ BAŞARILAR VE ÖDÜLLER</h4>
             <article className="success-box">
-              <h5 className='heading'>YIL YARIŞMA DERECE</h5>
+              <h5 className="heading">YIL YARIŞMA DERECE</h5>
               <div>
                 {data.success.map((success, i) => {
                   return (
@@ -49,7 +49,12 @@ const About = () => {
 
       <div className="gallery">
         {data.gallery.map((img, i) => {
-          return <img src={img} key={i} alt="gallery_photo" />;
+          return (
+            <div className="card" key={i}>
+              <img src={img} alt="gallery_photo" className="gallery_photo" />
+              <AiOutlineCamera className="camera" />
+            </div>
+          );
         })}
       </div>
     </section>

@@ -4,7 +4,7 @@ import {
   Route,
   RouterProvider,
 } from 'react-router-dom';
-import { MainLayout } from './components/exporter';
+import MainLayout from './layouts/MainLayout';
 import { About, Home } from './pages/exporter';
 
 function App() {
