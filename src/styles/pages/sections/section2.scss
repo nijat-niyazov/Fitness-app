@@ -1,9 +1,10 @@
+@use '../../vars/variables' as *;
+
 .section-2 {
   color: $beyaz;
   width: 95%;
   margin: auto;
   position: relative;
-  z-index: -1;
 
   .info {
     text-align: center;

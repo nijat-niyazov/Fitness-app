@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import navLogo from '../../assets/images/project/nav-logo.png';
-import '../../styles/components/navbar.scss';
-import ProgressBar from '../progressBar/ProgressBar';
-import SubMenus from './SubMenus';
 import navInfo from '../../data/nav/nav.json';
+import '../../styles/components/navbar.scss';
+import { linkMaker } from '../../utils/exporter';
+import SubMenus from './SubMenus';
 // import IconUs from '../../data/nav/icons';
 // import icons from '../../data/nav/icons';
 
@@ -66,7 +66,10 @@ const Navbar = () => {
 
           <ul className="nav_section">
             <li className="nav_elements">
-              <NavLink className="nav_element">
+              <NavLink
+                to={linkMaker('UZAKTAN EĞİTİM PAKETLERİ')}
+                className="nav_element"
+              >
                 UZAKTAN EĞİTİM PAKETLERİ
               </NavLink>
 
@@ -77,6 +80,7 @@ const Navbar = () => {
                     onMouseEnter={setter}
                     onClick={() => setMenus(null)}
                     className="nav_element"
+                    to="hakkimda/bazi/bilgiler"
                   >
                     {/* <span> */}
                     {menu.toUpperCase().split('_').join(' ')}

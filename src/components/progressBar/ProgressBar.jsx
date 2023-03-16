@@ -17,8 +17,6 @@ const ProgressBar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // console.log(bar);
-
   return (
     <div
       style={{

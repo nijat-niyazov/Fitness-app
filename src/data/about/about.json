@@ -1,0 +1,54 @@
+{
+  "img": "https://begreensports.com/image/cache/catalog/00-mustafa/mustafa-yyidiz-1536x2304.JPG",
+  "about": "Ben  Mustafa Yıldız, 1993 yılında sakarya’ da doğdum ve hayatımın büyük bir bölümünü sporun içinde geçirdim. Sakarya Spor bilimleri fakültesinden mezunum. Bu sporu profesyonel olarak yapmaktayım. Sadece sporda değil, insanlara ilham vermek onlara rol model olmak benim için ayrı bir önem taşımaktadır. Bu yüzden birçok sosyal sorumluluk projesinde yer aldım ve toplumda farkındalık yaratmaya çalıştım. Sporun insan hayatındaki önemini ve sağlıklı yaşam tarzının faydalarını anlatmak için sık sık üniversitelerde konferans ve seminer vermekteyim. Hayatım boyunca spora olan tutkum ve disiplinim beni bugünlere getirdi ve benim için sporun sadece bir aktiviteden daha fazlası olduğunu gösterdi.Benim hedefim, insanların spor yaparak hayatlarını değiştirebileceklerini ve en iyi versiyonlarına ulaşabileceklerini fark etmelerini sağlamak. Spor akademisi mezunu olarak, hentbol ,tenis , yüzme ve profesyonel masörlük  gibi  branşlarda da antrenörlük belgelerini alarak  farklı spor alanlarında da kendimi geliştirdim. Kariyerimi  fitness vücut geliştirme üzerine devam ettirmekteyim. Kurduğum uzaktan eğitim Be Green mobil uygulama takip sistemi ile 10.000 üzerinde kişiye aktif olarak danışmanlık vermekte olup ve binlerce insanın hayatına dokunabilmenin mutluluğunu yaşıyorum. Öğrencilerim arasında birçok başarılı sporcunun yanı sıra, sağlıklı yaşam tarzı benimseyen ve kendilerine güvenen insanların da olduğunu görmek beni mutlu ediyor. Uzaktan eğitim ekibimin içerisinde Doktor ,fizyoterapist ,diyetisyen ve alanında uzman antrenör takım arkadaşlarım ile 13 kişilik dev bir kadroyuz. Benim için sadece spor yapmak değil, aynı zamanda sporu başkalarına öğretmek de bir eğitimci olarak çok önemli. Bu konuda sürekli farklı projelerde yer almaya özen göstermekteyim.",
+
+  "success": [
+    {
+      "year": "2019",
+      "competition": "RUSSIA INTERNATIONAL CHAMPIONS SHIP",
+      "place": "1.st"
+    },
+    { "year": "2019", "competition": "WILLIAM BONAC CLASSIC", "place": "3.rd" },
+    {
+      "year": "2018",
+      "competition": "OLYMPIA AMATEUR PORTUGAL",
+      "place": "5.th"
+    },
+    { "year": "2018", "competition": "OLYMPIA AMATEUR SPAİN", "place": "2.nd" },
+    {
+      "year": "2017",
+      "competition": "WBBF EUROPEAN CHAMPIONS SHIP",
+      "place": "1.st"
+    },
+    { "year": "2017", "competition": "NAC WORLD", "place": "2.nd" },
+    { "year": "2017", "competition": "WABBA WORLD", "place": "1.st" },
+    { "year": "2016", "competition": "TÜRKİYE ŞAMPİYONASI", "place": "1.st" }
+  ],
+  "personal": {
+    "age": "29",
+    "height": "180",
+    "kg": "115"
+  },
+  "platforms": [
+    {
+      "inst": "https://www.instagram.com/m.y.hulk_/",
+      "youtube": "https://www.youtube.com/channel/UCJj0mVFIqaf9TyTbbzbYkXA",
+      "tiktok": "https://www.youtube.com/channel/UCJj0mVFIqaf9TyTbbzbYkXA"
+    }
+  ],
+
+  "gallery": [
+    "https://begreensports.com/image/cache/catalog/00-galeri/2-min-min-4000x6000.jpg",
+    "https://begreensports.com/image/cache/catalog/00-galeri/2-min-min-4000x6000.jpg",
+    "https://begreensports.com/image/cache/catalog/00-galeri/2-min-min-4000x6000.jpg",
+    "https://begreensports.com/image/cache/catalog/00-galeri/2-min-min-4000x6000.jpg",
+    "https://begreensports.com/image/cache/catalog/00-galeri/2-min-min-4000x6000.jpg",
+    "https://begreensports.com/image/cache/catalog/00-galeri/2-min-min-4000x6000.jpg",
+    "https://begreensports.com/image/cache/catalog/00-galeri/2-min-min-4000x6000.jpg",
+    "https://begreensports.com/image/cache/catalog/00-galeri/2-min-min-4000x6000.jpg",
+    "https://begreensports.com/image/cache/catalog/00-galeri/2-min-min-4000x6000.jpg",
+    "https://begreensports.com/image/cache/catalog/00-galeri/2-min-min-4000x6000.jpg",
+    "https://begreensports.com/image/cache/catalog/00-galeri/2-min-min-4000x6000.jpg",
+    "https://begreensports.com/image/cache/catalog/00-galeri/2-min-min-4000x6000.jpg"
+  ]
+}

@@ -3,54 +3,58 @@
 @import './sections/section3.scss';
 @import './sections/section4.scss';
 
-img {
-  width: 100%;
-  height: 100%;
-}
+.home {
+  background-color: $main-bg;
 
-.av {
-  position: relative;
-}
-
-.faiz {
-  position: absolute;
-  top: 60%;
-  color: white;
-  background: #000;
-  padding: 8px;
-  border: 1px solid white;
-  border-radius: 10px;
-  left: 36%;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  justify-content: center;
-  align-items: center;
-
-  .card {
-    max-width: 400px;
-    min-width: 200px;
-    max-height: 200px;
-    min-height: 200px;
+  img {
     width: 100%;
     height: 100%;
-    background: white;
-    margin: 20px;
-    border-radius: 30px;
-    opacity: 1;
-    transform: translateY(100px);
   }
 
-  .target {
-    transform: translateY(100px);
+  .av {
+    position: relative;
   }
 
-  .no {
-    opacity: 1;
-    transform: translateY(0);
-    transition: all 0.5s;
+  .faiz {
+    position: absolute;
+    top: 60%;
+    color: white;
+    background: #000;
+    padding: 8px;
+    border: 1px solid white;
+    border-radius: 10px;
+    left: 36%;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+
+    .card {
+      max-width: 400px;
+      min-width: 200px;
+      max-height: 200px;
+      min-height: 200px;
+      width: 100%;
+      height: 100%;
+      background: white;
+      margin: 20px;
+      border-radius: 30px;
+      opacity: 1;
+      transform: translateY(100px);
+    }
+
+    .target {
+      transform: translateY(100px);
+    }
+
+    .no {
+      opacity: 1;
+      transform: translateY(0);
+      transition: all 0.5s;
+    }
   }
 }
