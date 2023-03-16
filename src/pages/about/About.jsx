@@ -3,10 +3,11 @@ import { AiOutlineCamera } from 'react-icons/ai';
 import { BreadCrumbs } from '../../components/exporter';
 import data from '../../data/about/about.json';
 import '../../styles/pages/about.scss';
-import { useTitleSetter } from '../../utils/exporter';
+import { lazyLoadImages, useTitleSetter } from '../../utils/exporter';
 
 const About = () => {
   useTitleSetter('Hakkimda');
+  lazyLoadImages();
 
   return (
     <section className="about">
@@ -51,7 +52,12 @@ const About = () => {
         {data.gallery.map((img, i) => {
           return (
             <div className="card" key={i}>
-              <img src={img} alt="gallery_photo" className="gallery_photo" />
+              <img
+                src=""
+                data-src={img}
+                alt="gallery_photo"
+                className="gallery_photo"
+              />
               <AiOutlineCamera className="camera" />
             </div>
           );

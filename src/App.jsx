@@ -1,3 +1,4 @@
+import React, { Suspense } from 'react';
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -19,7 +20,9 @@ function App() {
 
   return (
     <div className="App">
-      <RouterProvider router={router} />
+      <Suspense fallback={<p>loading...</p>}>
+        <RouterProvider router={router} />
+      </Suspense>
     </div>
   );
 }
