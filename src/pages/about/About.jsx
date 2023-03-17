@@ -12,7 +12,7 @@ const About = () => {
     <section className="about">
       <header>
         <h2>HAKKIMDA</h2>
-        <BreadCrumbs />
+        {/* <BreadCrumbs /> */}
       </header>
       <div className="flex">
         <img src={data.img} data-src="" alt="mustafa-yaris" />
