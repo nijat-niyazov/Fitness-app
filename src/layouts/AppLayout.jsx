@@ -1,8 +1,8 @@
 import React from 'react';
-import { Footer, Navbar } from '../components/exporter';
 import { Outlet } from 'react-router-dom';
+import { Footer, Navbar } from '../components/comExporter';
 
-const MainLayout = () => {
+const AppLayout = () => {
   return (
     <>
       <header>
@@ -18,4 +18,4 @@ const MainLayout = () => {
   );
 };
 
-export default MainLayout;
+export default AppLayout;

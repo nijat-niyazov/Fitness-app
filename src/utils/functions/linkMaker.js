@@ -3,7 +3,13 @@ const linkMaker = category => {
   const engEquivalent = ['ch', 'g', 'i', 'o', 'sh', 'u'];
 
   const categoryLowerCase = category.toLowerCase().trim();
-  const spreaded = [...categoryLowerCase.replaceAll(' ', '-')];
+  const spreaded = [
+    ...categoryLowerCase
+      .replaceAll(' ', '-')
+      .replaceAll('(', '')
+      .replaceAll(')', '')
+      .replaceAll(':', '-'),
+  ];
 
   const replacedCategory = spreaded
     .map(letter => {

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { linkMaker } from '../../utils/exporter';
+import { linkMaker } from '../../utils/utilExporter';
 import SubItem from './SubItem';
 
 const SubMenus = ({ ml, menus }) => {

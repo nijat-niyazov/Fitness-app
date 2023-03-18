@@ -1,0 +1,121 @@
+@use '../vars/variables' as *;
+
+.list_maker {
+  button {
+    border: none;
+    background: none;
+    font-size: 40px;
+  }
+  margin-left: 20px;
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.products {
+  margin-left: 200px;
+  display: flex;
+  // align-items: center;
+  justify-content: center;
+  list-style: none;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  .card {
+    height: auto;
+    padding-bottom: 20px;
+    transition: border-bottom 0.3s;
+    border-bottom: 2px solid rgba(0, 128, 0, 0);
+    font-weight: 700;
+    text-align: center;
+
+    .title {
+      font-size: 15px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: $main-bg;
+      font-family: $barlow;
+    }
+
+    .price {
+      font-family: $barlow;
+
+      margin-top: 20px;
+      font-size: 18px;
+      color: rgba(48, 56, 65, 1);
+    }
+
+    .buy {
+      border: none;
+      display: inline-block;
+      background: none;
+      span {
+        font-family: $barlow;
+        font-size: 16px;
+        text-transform: uppercase;
+        font-weight: 700;
+        line-height: 2;
+        &:hover {
+          color: $green-color;
+        }
+      }
+    }
+
+    .product_img {
+      object-fit: cover;
+      width: 250px;
+    }
+    &:hover {
+      border-bottom: 2px solid green;
+    }
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+
+  .card {
+    display: flex;
+    width: 60%;
+    align-items: flex-start;
+    gap: 100px;
+    border-bottom: 2px solid black;
+    overflow: hidden;
+
+    &:hover {
+      border-bottom: 2px solid black;
+    }
+
+    .product_img {
+      overflow: hidden;
+      transition: all 0.3s;
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+
+    .info {
+      margin-top: 50px;
+      .title {
+        font-size: 20px;
+      }
+
+      .price {
+        font-weight: 300;
+        color: black;
+      }
+
+      .flex {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        .quant-changer {
+          display: grid;
+        }
+      }
+    }
+  }
+}

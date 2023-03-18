@@ -1,5 +1,5 @@
 import section3 from '../../../data/sections/section3.json';
-import { fading, lazyLoadImages } from '../../../utils/exporter';
+import { fading, lazyLoadImages } from '../../../utils/utilExporter';
 
 // import lazyLoader from '../../../utils/functions/lazyLoadImg';
 

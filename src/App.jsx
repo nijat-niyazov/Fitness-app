@@ -5,15 +5,22 @@ import {
   Route,
   RouterProvider,
 } from 'react-router-dom';
-import MainLayout from './layouts/MainLayout';
-import { About, Home } from './pages/exporter';
+import { AppLayout, ProductsLayout } from './layouts/layoutExporter';
+import { About, Home, Products } from './pages/pageExporter';
+import Product from './pages/products/Product';
+import { productsLoader } from './router-loaders/routExporter';
 
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route path="/" element={<MainLayout />}>
+      <Route path="/" element={<AppLayout />}>
         <Route index element={<Home />} />
-        <Route path="/hakkimda/bazi/bilgiler" element={<About />} />
+        <Route path="hakkimda/bazi/bilgiler" element={<About />} />
+
+        <Route path="products" element={<ProductsLayout />}>
+          <Route index loader={productsLoader} element={<Products />} />
+          <Route path=":productName" element={<Product />} />
+        </Route>
       </Route>
     )
   );

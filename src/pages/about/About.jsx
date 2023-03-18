@@ -1,8 +1,7 @@
 import { AiOutlineCamera } from 'react-icons/ai';
-import { BreadCrumbs } from '../../components/exporter';
 import data from '../../data/about/about.json';
 import '../../styles/pages/about.scss';
-import { lazyLoadImages, useTitleSetter } from '../../utils/exporter';
+import { lazyLoadImages, useTitleSetter } from '../../utils/utilExporter';
 
 const About = () => {
   useTitleSetter('Hakkimda');

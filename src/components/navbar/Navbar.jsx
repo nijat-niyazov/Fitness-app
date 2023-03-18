@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import navLogo from '../../assets/images/project/nav-logo.png';
 import navInfo from '../../data/nav/nav.json';
 import '../../styles/components/navbar.scss';
-import { linkMaker } from '../../utils/exporter';
+import { linkMaker } from '../../utils/utilExporter';
 import SubMenus from './SubMenus';
 // import IconUs from '../../data/nav/icons';
 // import icons from '../../data/nav/icons';

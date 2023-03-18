@@ -1,7 +1,7 @@
+import { AiOutlineDoubleRight } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import section4 from '../../../data/sections/section4.json';
-import { fading, lazyLoadImages } from '../../../utils/exporter';
-import { AiOutlineDoubleRight } from 'react-icons/ai';
+import { fading, lazyLoadImages } from '../../../utils/utilExporter';
 
 const Section4 = () => {
   fading();
