@@ -1,18 +1,23 @@
 import { AiOutlineDoubleRight } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import section4 from '../../../data/sections/section4.json';
+import scrollOnAnimation from '../../../utils/functions/scrollAnimation';
 import { fading, lazyLoadImages } from '../../../utils/utilExporter';
 
 const Section4 = () => {
-  fading();
+  // fading();
 
-  lazyLoadImages();
+  lazyLoadImages('src');
+  // ============ AOS ===========
+  scrollOnAnimation('card', 'left');
+
+
   return (
     <section
       className="section-4"
-      data-aos="fade-up"
-      data-aos-offset="1350"
-      data-aos-duration="60000"
+      // data-aos="fade-up"
+      // data-aos-offset="150"
+      // data-aos-duration="60000"
     >
       {section4.map(({ img, paket, link }, i) => {
         return (

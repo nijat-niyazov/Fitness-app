@@ -5,7 +5,7 @@ import '../../styles/pages/home.scss';
 import { Section2, Section3, Section4 } from './sections/sections';
 
 const Home = () => {
-  useEffect(() => window.scrollTo({ top: 0 }), []);
+  
 
   return (
     <div className="home">

@@ -33,7 +33,7 @@ const Products = () => {
                   <h4 className="title">{title}</h4>
                   <h6 className="price"> ₺ {price},00</h6>
                   <div className="flex">
-                    {list ? (
+                    {list && (
                       <div className="quant-changer">
                         <span className="quantity"> {count} </span>
                         <div className="buttons">
@@ -45,7 +45,7 @@ const Products = () => {
                           </button>
                         </div>
                       </div>
-                    ) : null}
+                    )}
                     <button className="buy">
                       <span> Satın Al </span>
                     </button>

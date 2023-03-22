@@ -1,14 +1,16 @@
 import section3 from '../../../data/sections/section3.json';
-import { fading, lazyLoadImages } from '../../../utils/utilExporter';
+import scrollOnAnimation from '../../../utils/functions/scrollAnimation';
+import { lazyLoadImages } from '../../../utils/utilExporter';
 
 // import lazyLoader from '../../../utils/functions/lazyLoadImg';
 
 const Section3 = () => {
-  // ============ Fading Up ===========
-  fading();
-
   // ============ LazyLoader ===========
   lazyLoadImages();
+
+  // ============ AOS ===========
+  scrollOnAnimation('odd', 'right');
+  scrollOnAnimation('even', 'left');
 
   return (
     <section className="section-3">
@@ -18,10 +20,7 @@ const Section3 = () => {
         return (
           <div
             key={i}
-            className="box"
-            data-aos="fade-up"
-            data-aos-offset={i === 0 ? '1150' : '1350'}
-            data-aos-duration="60000"
+            className={'box ' + ((i + 1) % 2 !== 0 ? 'odd' : 'even')}
           >
             <article>
               <h2>
@@ -36,11 +35,10 @@ const Section3 = () => {
                 <span>{button}</span>
               </button>
             </article>
-            {/* <LazyLoadImage src={img} alt="traniner" /> */}
             <img
               src={''}
               data-src={img}
-              alt="traniner"
+              alt="trainer"
               width={500}
               height={250}
             />

@@ -5,25 +5,29 @@
   width: 95%;
   margin: auto;
   position: relative;
+  font-family: $barlow;
+  transform: translateY(20%);
+  opacity: 0;
+  transition: all 0.5s;
 
   .info {
     text-align: center;
     font-weight: 700;
     margin-bottom: 60px;
 
-    h1 {
+    .title {
       font-size: 50px;
       line-height: 140px;
       font-family: 'Anton';
       letter-spacing: 2px;
     }
-    ul {
+    .bar-dot {
       list-style: none;
       display: flex;
       justify-content: space-between;
 
-      li {
-        padding-bottom: 40px;
+      .bar-sec {
+        padding-bottom: 20px;
         position: relative;
         border-bottom: 1px solid $gray;
         margin-right: 2px;
@@ -46,14 +50,19 @@
 
   .services {
     list-style: circle;
-    width: 95%;
+    width: 80%;
     margin: auto;
-    margin-left: 40px;
-    font-weight: 600;
-    li {
+    .service {
+      white-space: nowrap;
+      line-height: 1;
       margin: 10px 0;
-      font-size: 20px;
-      color: $gray;
+      font-weight: 400;
+      font-size: 24px;
+      color: rgba(149, 150, 152, 1);
     }
+  }
+  &.show {
+    transform: translateY(0%);
+    opacity: 1;
   }
 }

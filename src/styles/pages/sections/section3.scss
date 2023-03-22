@@ -12,10 +12,32 @@
     display: flex;
     justify-content: center;
     gap: 40px;
+    transition: all 0.5s;
+
+    &:nth-child(1) {
+      transform: translateX(20%);
+      opacity: 0;
+      
+      &.right {
+        transform: translateX(0%);
+        opacity: 1;
+      }
+    }
 
     &:nth-child(2) {
       img {
         order: -1;
+      }
+      opacity: 0;
+
+
+
+      transform: translateX(-20%);
+
+      &.left {
+        transform: translateX(0%);
+        opacity: 1;
+
       }
     }
 
