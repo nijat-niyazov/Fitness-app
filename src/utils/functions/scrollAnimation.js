@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 const options = {
   rootMargin: '0px 0px 0px 0px',
-  threshold: 0.2,
+  threshold: 0.5,
 };
 
 const scrollOnAnimation = (attribute, className) => {
@@ -12,20 +12,18 @@ const scrollOnAnimation = (attribute, className) => {
         return;
       } else {
         e.target.classList.add(className);
-        console.log('it did from ' + className);
-
         self.unobserve(e.target);
       }
     });
   }, options);
 
   useEffect(() => {
-    const secEl = document.querySelectorAll(`.${attribute}`);
+    const nodeList = document.querySelectorAll(`.${attribute}`);
 
-    secEl?.forEach(element => elementObserver.observe(element));
+    nodeList?.forEach(element => elementObserver.observe(element));
 
     return () => {
-      secEl?.forEach(element => elementObserver.unobserve(element));
+      nodeList?.forEach(element => elementObserver.unobserve(element));
     };
   }, []);
 };

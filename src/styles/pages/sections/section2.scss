@@ -4,7 +4,6 @@
   color: $beyaz;
   width: 95%;
   margin: auto;
-  position: relative;
   font-family: $barlow;
   transform: translateY(20%);
   opacity: 0;
@@ -17,8 +16,8 @@
 
     .title {
       font-size: 50px;
-      line-height: 140px;
-      font-family: 'Anton';
+      padding: 40px 0;
+      font-family: $anton;
       letter-spacing: 2px;
     }
     .bar-dot {
@@ -61,6 +60,7 @@
       color: rgba(149, 150, 152, 1);
     }
   }
+  
   &.show {
     transform: translateY(0%);
     opacity: 1;
