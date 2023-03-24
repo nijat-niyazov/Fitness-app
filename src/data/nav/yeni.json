@@ -1,0 +1,79 @@
+[
+  {
+   "name": "'UZAKTAN EĞİTİM PAKETLERİ",
+   "menu": [
+     {
+       "img": "https://begreensports.com/image/cache/catalog/0%20-%20Egitim/3-aylik175px-175x310.jpg"
+     },
+     {
+       "img": "https://begreensports.com/image/cache/catalog/0%20-%20Egitim/6-Aylik-175px-175x310.jpg"
+     },
+     {
+       "img": "https://begreensports.com/image/cache/catalog/0%20-%20Egitim/1yillik-175px-175x310.jpg"
+     },
+     {
+       "img": "https://begreensports.com/image/cache/catalog/0%20-%20Egitim/1-Karsilastirma175px-175x310.jpg"
+     }
+   ]
+ },
+
+  {
+   "name": "'UZAKTAN EĞİTİM PAKETLERİ",
+   "menu": [
+     { "main": "BE GREEN KOLYE" },
+     { "main": "BE GREEN ÖĞÜN ÇANTALARI" },
+     { "main": "GYM PLAID / GÖMLEK SERİSİ" },
+     { "main": "SPOR KORSE" },
+     { "main": "OVERSİZE T-SHİRT" },
+     { "main": "KAMUFLAJ FİLE T-SHİRT" },
+     { "main": "KAPÜŞONLU HOODİE" },
+     { "main": "KISA ŞORT" },
+     { "main": "EŞOFMAN ALTI" },
+     { "main": "ANTRENMAN ATLETİ" },
+     { "main": "WOMEN TANK TOP" },
+     { "main": "WASHED T-SHIRT" },
+     { "main": "WASHED ŞORT" },
+     { "main": "WASHED GYM TANK TOP" },
+     { "main": "KADIN TAYT - BRA" }
+   ]
+ },
+
+ "supplement_market": {
+   "name": "'UZAKTAN EĞİTİM PAKETLERİ",
+   "menu": [
+     { "main": "AVANTAJLI SUPPLEMENT PAKETLERİ" },
+     {
+       "main": "AMİNO ASİTLER",
+       "submenus": ["ARGININE", "BCAA", "GLUTAMİNE"]
+     },
+     { "main": "AROMALAR" },
+     { "main": "DETOKS ÜRÜNLERİ" },
+     { "main": "GÜÇ VE PERFORMANS" },
+     { "main": "KİLO ALMA–KARBONHİDRATLAR" },
+     { "main": "KOLAJEN" },
+     { "main": "PROTEİN TOZLARI" },
+     { "main": "VİTAMİN-MİNERALLER" },
+     {
+       "main": "YAĞ YAKICILAR–KİLO VERME",
+       "submenus": ["CLA", "L-CARNİTİNE", "THERMO"]
+     },
+     { "main": "CLA" },
+     { "main": "L-CARNİTİNE" },
+     { "main": "THERMO" },
+     { "main": "ZMA" },
+     { "main": "E-BOOK" },
+     { "main": "DAHA FİT OL" }
+   ]
+ },
+
+ "spor_ekipmanlari": {
+   "name": "'UZAKTAN EĞİTİM PAKETLERİ",
+   "menu": [
+     { "main": "AĞIRLIK SETLERİ" },
+     { "main": "FITNESS AKSESUARLARI" },
+     { "main": "KARDİYO EKİPMANLARI" }
+   ]
+ }
+]
+
+

@@ -65,10 +65,10 @@
             font-size: 16px;
             border-right: 0;
           }
-          // }
         }
       }
     }
+
     .user-icons {
       display: flex;
       gap: 20px;
@@ -82,12 +82,15 @@
         &:hover {
           opacity: 1;
         }
-        &:first-child::after {
-          content: 'ÜYE OL';
-          font-size: 7px;
-          position: absolute;
-          top: 83%;
-          right: 10%;
+        &:first-child {
+          position: relative;
+          &::after {
+            content: 'ÜYE OL';
+            font-size: 7px;
+            position: absolute;
+            top: 100%;
+            right: 2%;
+          }
         }
         &:last-child::after {
           content: '0';
@@ -99,6 +102,20 @@
           top: 2%;
           right: 2.3%;
         }
+      }
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    nav {
+      height: 40px;
+      .nav_section {
+        display: none;
+      }
+      .navbar {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
       }
     }
   }
