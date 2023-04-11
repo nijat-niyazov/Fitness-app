@@ -8,6 +8,19 @@ import navInfo from '../../data/nav/nav.json';
 import '../../styles/components/navbar.scss';
 import { linkMaker } from '../../utils/utilExporter';
 
+import {
+  Popover,
+  PopoverArrow,
+  PopoverBody,
+  PopoverContent,
+  PopoverTrigger,
+  useDisclosure,
+} from '@chakra-ui/react';
+import { useDispatch } from 'react-redux';
+import { openModal } from '../../redux/slices/modal';
+import LoginModal from '../auth/LoginModal';
+import RegisterModal from '../auth/Register';
+
 const icons = [
   { icon: <BsPersonCircle />, id: 1 },
   { icon: <BsSearch />, id: 3 },
@@ -17,6 +30,7 @@ const icons = [
 const Navbar = () => {
   const [bg, setBg] = useState('');
   const [hover, setHover] = useState('');
+  const dispatch = useDispatch();
 
   const handleScroll = () => {
     const scrollY = window.scrollY || window.pageYOffset;
@@ -32,6 +46,9 @@ const Navbar = () => {
 
   const [menus, setMenus] = useState(null);
   const [ml, setMl] = useState(null);
+  const [triggered, setTriggered] = useState(null);
+
+  console.log(triggered);
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
@@ -46,6 +63,8 @@ const Navbar = () => {
         2
     );
   };
+
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <div className="nav">
@@ -91,10 +110,41 @@ const Navbar = () => {
         </div>
         <ul className="user-icons">
           {icons.map(({ icon, id }) => (
-            <li key={id}>{icon}</li>
+            <Popover trigger="hover">
+              <PopoverTrigger>
+                <li key={id}>{icon}</li>
+              </PopoverTrigger>
+              <PopoverContent w="140px" mt={3}>
+                <PopoverArrow />
+                <PopoverBody>
+                  <button
+                    onClick={() => {
+                      dispatch(openModal());
+                      setTriggered('login');
+                    }}
+                    key={id}
+                  >
+                    Giris
+                  </button>
+                </PopoverBody>
+                <PopoverBody>
+                  <button
+                    onClick={() => {
+                      dispatch(openModal());
+                      setTriggered('register');
+                    }}
+                    key={id}
+                  >
+                    Register
+                  </button>
+                </PopoverBody>
+              </PopoverContent>
+            </Popover>
           ))}
         </ul>
       </nav>
+      {triggered === 'login' && <LoginModal />}
+      {triggered === 'register' && <RegisterModal />}
     </div>
   );
 };

@@ -5,10 +5,11 @@ import {
   Route,
   RouterProvider,
 } from 'react-router-dom';
-import { AppLayout, ProductsLayout } from './layouts/layoutExporter';
+import { AppLayout } from './layouts/layoutExporter';
 import { About, Home, Products } from './pages/pageExporter';
 import Product from './pages/products/Product';
 import { productsLoader } from './router-loaders/routExporter';
+import Test from './test/Test';
 
 function App() {
   const router = createBrowserRouter(
@@ -17,10 +18,11 @@ function App() {
         <Route index element={<Home />} />
         <Route path="hakkimda/bazi/bilgiler" element={<About />} />
 
-        <Route path="products" element={<ProductsLayout />}>
+        <Route path="products">
           <Route index loader={productsLoader} element={<Products />} />
           <Route path=":productName" element={<Product />} />
         </Route>
+        <Route path="test" element={<Test />} />
       </Route>
     )
   );
