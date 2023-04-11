@@ -1,50 +1,68 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { categories } from './categories';
 
 const Test = () => {
-  const [subCats, setSubCats] = useState([]);
   const [newParent, setNewParent] = useState(0);
+  const [selectedParents, setSelectedParents] = useState([]);
+  const [selectedChilds, setSelectedChilds] = useState([]);
 
-  // const mainCats = categories.filter(c => c.parent === 0);
+  const onlySubCats = addedParent =>
+    categories.filter(p => p.parent === addedParent);
 
-  const mainCats = categories.filter(c => c.parent === 0);
-
-  useEffect(() => {
-    setSubCats(categories.filter(c => c.parent === newParent));
-  }, [newParent]);
-
-  const boolean = id => categories.some(c => c.parent === id);
+  const getFilteredCategories = onlySubCats(newParent);
 
   return (
     <div>
       <ul style={{ display: 'flex', listStyle: 'none' }}>
-        {mainCats.map(cat => {
-          return (
-            <>
-              <li
-                style={{ cursor: 'pointer', marginRight: '120px' }}
-                key={cat.id}
-                onClick={() => {
-                  setNewParent(cat.id);
-                }}
-              >
-                {cat.name}
-              </li>
-            </>
-          );
-        })}
-      </ul>
-      {subCats.length > 0 && (
-        <ul className="pop-uver" style={{ listStyle: 'none' }}>
-          {subCats.map(s => {
+        {selectedParents.length > 0 &&
+          selectedParents.map(cat => {
             return (
-              <li key={s.id}>
-                {s.name} {boolean(s.id) ? '+' : null}
-              </li>
+              <ul className="">
+                {onlySubCats(cat)?.map(cat => {
+                  return (
+                    <li
+                      style={{ cursor: 'pointer', marginRight: '120px' }}
+                      key={cat.id}
+                      onClick={() => {
+                        setSelectedParents(parent => [...parent, cat.parent]);
+                        setNewParent(cat.id);
+                      }}
+                    >
+                      {cat.name} <br />
+                      <br />
+                    </li>
+                  );
+                })}
+              </ul>
             );
           })}
-        </ul>
-      )}
+      </ul>
+      <ul style={{ display: 'flex', listStyle: 'none' }}>
+        {getFilteredCategories.length > 0 &&
+          getFilteredCategories.map(cat => {
+            return (
+              <>
+                <li
+                  style={{ cursor: 'pointer', marginRight: '120px' }}
+                  key={cat.id}
+                  onClick={() => {
+                    setSelectedParents(parent => [...parent, cat.parent]);
+                    setNewParent(cat.id);
+                  }}
+                >
+                  {cat.name} <br />
+                  <br />
+                  {/* <span>
+                    {categories.filter(c => c.parent === cat.id).length}
+                  </span> */}
+                </li>
+              </>
+            );
+          })}
+      </ul>
+
+      <pre>{JSON.stringify(selectedParents, null, 2)}</pre>
+      {/* <pre>{JSON.stringify(selectedChilds, null, 2)}</pre> */}
     </div>
   );
 };
