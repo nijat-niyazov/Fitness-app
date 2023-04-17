@@ -3,41 +3,64 @@ import { categories } from './categories';
 
 const Test = () => {
   const [newParent, setNewParent] = useState(0);
-  const [selectedParents, setSelectedParents] = useState([]);
-  const [selectedChilds, setSelectedChilds] = useState([]);
+  const [selectedParentsId, setSelectedParentsId] = useState([]);
+  const [selectedChildsId, setSelectedChildsId] = useState([]);
 
   const onlySubCats = addedParent =>
     categories.filter(p => p.parent === addedParent);
 
   const getFilteredCategories = onlySubCats(newParent);
 
+  // console.log(getFilteredCategories, selectedParentsId, selectedChildsId);
+
   return (
     <div>
-      <ul style={{ display: 'flex', listStyle: 'none' }}>
-        {selectedParents.length > 0 &&
-          selectedParents.map(cat => {
-            return (
-              <ul className="">
-                {onlySubCats(cat)?.map(cat => {
-                  return (
-                    <li
-                      style={{ cursor: 'pointer', marginRight: '120px' }}
-                      key={cat.id}
-                      onClick={() => {
-                        setSelectedParents(parent => [...parent, cat.parent]);
-                        setNewParent(cat.id);
+      {selectedParentsId.length > 0 &&
+        selectedParentsId.map((cat, index) => {
+          const nextParentElements = onlySubCats(cat);
+
+          return (
+            <ul
+              style={{ display: 'flex', listStyle: 'none', background: 'red' }}
+            >
+              {nextParentElements?.map(cat => {
+                return (
+                  <li
+                    style={{ cursor: 'pointer', marginRight: '120px' }}
+                    key={cat.id}
+                    onClick={() => {
+                      setSelectedParentsId([
+                        ...selectedParentsId.slice(0, index),
+                        cat.parent,
+                      ]);
+                      setSelectedChildsId([
+                        ...selectedChildsId.slice(0, index),
+                        cat.id,
+                      ]);
+                      setNewParent(cat.id);
+                    }}
+                  >
+                    {cat.name}
+                    <span
+                      style={{
+                        background: 'green',
+                        color: 'white',
+                        padding: '2px',
                       }}
                     >
-                      {cat.name} <br />
-                      <br />
-                    </li>
-                  );
-                })}
-              </ul>
-            );
-          })}
-      </ul>
-      <ul style={{ display: 'flex', listStyle: 'none' }}>
+                      {categories.filter(c => c.parent === cat.id).length > 0
+                        ? '+'
+                        : null}
+                    </span>
+                    <br />
+                    <br />
+                  </li>
+                );
+              })}
+            </ul>
+          );
+        })}
+      <ul>
         {getFilteredCategories.length > 0 &&
           getFilteredCategories.map(cat => {
             return (
@@ -46,23 +69,31 @@ const Test = () => {
                   style={{ cursor: 'pointer', marginRight: '120px' }}
                   key={cat.id}
                   onClick={() => {
-                    setSelectedParents(parent => [...parent, cat.parent]);
+                    setSelectedParentsId(parents => [...parents, cat.parent]);
+                    setSelectedChildsId(childs => [...childs, cat.id]);
                     setNewParent(cat.id);
                   }}
                 >
-                  {cat.name} <br />
-                  <br />
-                  {/* <span>
-                    {categories.filter(c => c.parent === cat.id).length}
-                  </span> */}
+                  {cat.name}
+                  {'   '}
+                  <span
+                    style={{
+                      background: 'green',
+                      color: 'white',
+                      padding: '2px',
+                    }}
+                  >
+                    {categories.filter(c => c.parent === cat.id).length > 0
+                      ? '+'
+                      : ''}
+                  </span>
                 </li>
+                <br />
+                <br />
               </>
             );
           })}
       </ul>
-
-      <pre>{JSON.stringify(selectedParents, null, 2)}</pre>
-      {/* <pre>{JSON.stringify(selectedChilds, null, 2)}</pre> */}
     </div>
   );
 };

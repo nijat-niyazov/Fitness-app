@@ -18,7 +18,6 @@ const ModalComponent = ({ children, onClose }) => {
       onClose={() => dispatch(closeModal())}
       isCentered
       motionPreset="scale"
-      // width="500px"
     >
       <ModalOverlay backdropFilter="brightness(0.5)" />
       <ModalContent>

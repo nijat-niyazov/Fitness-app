@@ -1,15 +1,16 @@
-import React, { Suspense } from 'react';
+import { Suspense } from 'react';
 import {
   createBrowserRouter,
   createRoutesFromElements,
   Route,
   RouterProvider,
 } from 'react-router-dom';
-import { AppLayout } from './layouts/layoutExporter';
+import AppLayout from './layouts/AppLayout';
 import { About, Home, Products } from './pages/pageExporter';
 import Product from './pages/products/Product';
 import { productsLoader } from './router-loaders/routExporter';
 import Test from './test/Test';
+import Tester from './test/Tester';
 
 function App() {
   const router = createBrowserRouter(
@@ -23,6 +24,7 @@ function App() {
           <Route path=":productName" element={<Product />} />
         </Route>
         <Route path="test" element={<Test />} />
+        <Route path="tester" element={<Tester />} />
       </Route>
     )
   );

@@ -43,7 +43,7 @@ export const categories = [
     id: 9,
     name: 'KISA ŞORT',
     parent: 1,
-  },
+  },  
   {
     id: 10,
     name: 'EŞOFMAN ALTI',
@@ -200,3 +200,71 @@ export const categories = [
     parent: 37,
   },
 ];
+
+// export const categories = [
+//   {
+//     id: 1,
+//     name: 'A',
+//     parent: 0,
+//   },
+//   {
+//     id: 2,
+//     name: 'a',
+//     parent: 1,
+//   },
+//   {
+//     id: 3,
+//     name: 'Aa',
+//     parent: 2,
+//   },
+//   {
+//     id: 4,
+//     name: 'aa',
+//     parent: 3,
+//   },
+//   {
+//     id: 5,
+//     name: 'AAA',
+//     parent: 3,
+//   },
+//   {
+//     id: 6,
+//     name: 'aAA',
+//     parent: 4,
+//   },
+//   {
+//     id: 7,
+//     name: 'B',
+//     parent: 0,
+//   },
+//   {
+//     id: 8,
+//     name: 'b',
+//     parent: 7,
+//   },
+//   {
+//     id: 9,
+//     name: 'Bb',
+//     parent: 8,
+//   },
+//   {
+//     id: 10,
+//     name: 'bb',
+//     parent: 9,
+//   },
+//   {
+//     id: 11,
+//     name: 'BBB',
+//     parent: 9,
+//   },
+//   {
+//     id: 12,
+//     name: 'bBB',
+//     parent: 10,
+//   },
+//   {
+//     id: 13,
+//     name: 'C',
+//     parent: 0,
+//   },
+// ];
