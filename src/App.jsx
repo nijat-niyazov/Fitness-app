@@ -9,8 +9,8 @@ import AppLayout from './layouts/AppLayout';
 import { About, Home, Products } from './pages/pageExporter';
 import Product from './pages/products/Product';
 import { productsLoader } from './router-loaders/routExporter';
-import Test from './test/Test';
-import Tester from './test/Tester';
+import Tester from './test/hm/Tester';
+import Navbar from './test/Navbar';
 
 function App() {
   const router = createBrowserRouter(
@@ -20,10 +20,11 @@ function App() {
         <Route path="hakkimda/bazi/bilgiler" element={<About />} />
 
         <Route path="products">
+          ``
           <Route index loader={productsLoader} element={<Products />} />
           <Route path=":productName" element={<Product />} />
         </Route>
-        <Route path="test" element={<Test />} />
+        <Route path="test" element={<Navbar />} />
         <Route path="tester" element={<Tester />} />
       </Route>
     )
