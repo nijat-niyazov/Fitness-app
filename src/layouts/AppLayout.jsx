@@ -1,12 +1,13 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import { Footer, Navbar } from '../components/comExporter';
+import Navbarr from '../components/HeadMenu/Navbar';
+import { Footer } from '../components/comExporter';
 
 const AppLayout = () => {
   return (
     <>
       <header>
-        <Navbar />
+        <Navbarr />
       </header>
       <main>
         <Outlet />

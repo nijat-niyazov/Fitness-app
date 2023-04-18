@@ -108,7 +108,7 @@ const Navbar = () => {
           <SubMenus ml={ml} menus={navInfo[menus]} />
           <GoThreeBars style={{ fontSize: '34px', color: 'white' }} />
         </div>
-        {/* <ul className="user-icons">
+        <ul className="user-icons">
           {icons.map(({ icon, id }) => (
             <Popover trigger="hover">
               <PopoverTrigger>
@@ -141,7 +141,7 @@ const Navbar = () => {
               </PopoverContent>
             </Popover>
           ))}
-        </ul> */}
+        </ul>
       </nav>
       {triggered === 'login' && <LoginModal />}
       {triggered === 'register' && <RegisterModal />}
