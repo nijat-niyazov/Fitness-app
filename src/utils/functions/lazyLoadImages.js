@@ -13,7 +13,6 @@ const lazyLoadImages = () => {
     if (!dataSrc) {
       return;
     } else {
-      console.log('okay');
       setIsLoaded(true);
       target.src = dataSrc;
     }

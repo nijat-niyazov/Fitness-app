@@ -30,9 +30,7 @@ const Navbarr = () => {
 
       <ul className="action-icons">
         {icons.map(({ id, icon }) => (
-          <>
-            <li key={id}>{icon}</li>
-          </>
+          <li key={id}>{icon}</li>
         ))}
       </ul>
     </nav>

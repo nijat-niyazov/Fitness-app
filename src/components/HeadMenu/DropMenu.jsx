@@ -4,7 +4,7 @@ import MenuItem from './MenuItem';
 const DropMenu = ({ submenus, depth, show }) => {
   depth = depth + 1;
 
-  console.log(submenus, show);
+  // console.log(submenus, show);
 
   return (
     <ul

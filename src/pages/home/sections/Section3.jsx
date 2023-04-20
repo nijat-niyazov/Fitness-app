@@ -1,4 +1,5 @@
 import section3 from '../../../data/sections/section3.json';
+import Highlight from '../../../features/regexp-highlight/Highlight';
 import scrollOnAnimation from '../../../utils/functions/scrollAnimation';
 import { lazyLoadImages } from '../../../utils/utilExporter';
 
@@ -11,10 +12,11 @@ const Section3 = () => {
   // ============ AOS ===========
   scrollOnAnimation('odd', 'right');
   scrollOnAnimation('even', 'left');
+  const text = '#VÜCUT-ŞEKLİNİ DEĞİŞTİR SAYAS';
 
   return (
     <section className="section-3">
-      {section3.map(({ img, slogan, description, button }, i) => {
+      {section3.map(({ img, slogan, slogan2, description, button }, i) => {
         const secIndex = slogan.indexOf(' ', slogan.indexOf(' ') + 1);
 
         return (
@@ -24,10 +26,13 @@ const Section3 = () => {
           >
             <article>
               <h2>
-                <span>
-                  {slogan.slice(0, secIndex)} <br />
-                </span>
-                {slogan.slice(secIndex + 1)}
+                <Highlight
+                  starter={'mentioning'}
+                  starters={['mentioning', 'hashtag']}
+                  context={slogan2}
+                />
+                {/* {slogan2} */}
+                {/* </Highlight> */}
               </h2>
 
               <h6>{description}</h6>
