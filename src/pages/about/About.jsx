@@ -1,23 +1,18 @@
 import { Skeleton, Stack } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import { AiOutlineCamera } from 'react-icons/ai';
+import HelmetComponent from '../../components/meta-tags/Helmet';
 import data from '../../data/about/about.json';
 import '../../styles/pages/about.scss';
-import { lazyLoadImages, useTitleSetter } from '../../utils/utilExporter';
+import { lazyLoadImages } from '../../utils/utilExporter';
 
 const About = () => {
-  useTitleSetter('Hakkimda');
   const test = lazyLoadImages();
-  const [isLoaded, setIsLoaded] = useState(false);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     console.log(test);
   }, [test]);
-
-  useEffect(() => {
-    console.log(loading);
-  }, [loading]);
 
   function handleImageLoad() {
     setLoading(false);
@@ -25,6 +20,8 @@ const About = () => {
 
   return (
     <section className="about">
+      <HelmetComponent title="Mustafa Yildiz Kimdir?" />
+
       <header>
         <h2>HAKKIMDA</h2>
       </header>

@@ -12,9 +12,9 @@ const AppLayout = () => {
       <main>
         <Outlet />
       </main>
-      <footer>
+      {/* <footer>
         <Footer />
-      </footer>
+      </footer> */}
     </>
   );
 };

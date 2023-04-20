@@ -2,7 +2,7 @@ import { ErrorMessage, Field, Form, Formik } from 'formik';
 import * as yup from 'yup';
 
 import { Box, Button, Divider, ModalHeader } from '@chakra-ui/react';
-import ModalComponent from '../modal/Modal';
+import ModalComponent from '../../features/modal/Modal';
 import Error from './Error';
 import './login.scss';
 

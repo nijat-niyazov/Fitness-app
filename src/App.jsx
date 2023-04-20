@@ -1,4 +1,5 @@
 import { Suspense } from 'react';
+import { HelmetProvider } from 'react-helmet-async';
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -31,11 +32,13 @@ function App() {
   );
 
   return (
-    <div className="App">
-      <Suspense fallback={<p>loading...</p>}>
-        <RouterProvider router={router} />
-      </Suspense>
-    </div>
+    <HelmetProvider>
+      <div className="App">
+        <Suspense fallback={<p>loading...</p>}>
+          <RouterProvider router={router} />
+        </Suspense>
+      </div>
+    </HelmetProvider>
   );
 }
 

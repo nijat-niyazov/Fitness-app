@@ -5,19 +5,23 @@ const Item = ({ item, depth }) => {
   const [show, setShow] = useState(false);
 
   return (
-    <li className="item">
+    <>
       {item.submenus ? (
-        <React.Fragment>
-          <button type="button" onClick={() => setShow(p => !p)}>
+        <li className="item sub">
+          <button onClick={() => setShow(p => !p)} href="#">
             {item.name}
-            {depth > 0 ? <span> ➕</span> : <span className="nothing" />}
           </button>
-          <Dropped submenus={item.submenus} show={show} depth={depth} />
-        </React.Fragment>
+        </li>
       ) : (
-        <a href="#">{item.name}</a>
+        <li className="item">
+          <a href="#"> {item.name}</a>
+        </li>
       )}
-    </li>
+
+      {item.submenus && (
+        <Dropped submenus={item.submenus} show={show} depth={depth} />
+      )}
+    </>
   );
 };
 

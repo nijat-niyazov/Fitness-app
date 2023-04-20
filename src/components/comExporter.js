@@ -1,14 +1,9 @@
-import { lazy } from 'react';
-
+import UpperLinks from '../features/breadcrumbs/Links';
 import Footer from './footer/Footer';
 import Navbar from './navbar/Navbar';
-import ProgressBar from './progressBar/ProgressBar';
-import ScrollTop from './scroll-top/ScrollTop';
-import UpperLinks from './upper/Links';
+import ProgressBar from '../features/progressBar/ProgressBar';
+import ScrollTop from '../features/scroll-top/ScrollTop';
 
 //  =========== Lazy Components =================
 
-// let BreadCrumbs = lazy(() => import('./breadCrumbs/BreadCrumbs'));
-let FadingUp = lazy(() => import('./fadingUp/FadingUp'));
-
-export { Navbar, Footer, ScrollTop, ProgressBar, FadingUp, UpperLinks };
+export { Navbar, Footer, ScrollTop, ProgressBar, UpperLinks };
